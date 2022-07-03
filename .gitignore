@@ -129,3 +129,4 @@ obj/
 /build
 /captures
 .externalNativeBuild
+.idea/misc.xml
