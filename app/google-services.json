@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "59229103380",
+    "firebase_url": "https://prmonlyfans-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "prmonlyfans",
+    "storage_bucket": "prmonlyfans.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59229103380:android:5c4a909e2dbae8f0aa0e01",
+        "android_client_info": {
+          "package_name": "com.example.onlyfans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59229103380-d9nqrs2dge1kingafc5mn8baf3oa3l59.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlyfans",
+            "certificate_hash": "3d9e1e98e4faa49f3cb15df6c682a941053a2d7b"
+          }
+        },
+        {
+          "client_id": "59229103380-g753jha5qrmvuprjro83086cn6jft1ug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq3QvW9-_PaFg771MXHJnGSjUeMcXfu7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59229103380-g753jha5qrmvuprjro83086cn6jft1ug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
