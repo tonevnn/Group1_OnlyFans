@@ -67,8 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
                     HashMap<String,Object> hashMap = new HashMap<>();
                     hashMap.put("id",userid);
                     hashMap.put("username",username);
-                    hashMap.put("email", email);
-                    hashMap.put("password",password);
+                    hashMap.put("fullname", "");
+                    hashMap.put("bio","");
+                    hashMap.put("imageurl","https://firebasestorage.googleapis.com/v0/b/prmonlyfans.appspot.com/o/instagram_default_pfp.png?alt=media&token=78f53944-adcf-4a66-aeb4-d563371cc228");
                     reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
