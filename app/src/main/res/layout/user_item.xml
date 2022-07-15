@@ -39,7 +39,7 @@
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/babyblue"
         android:textColor="@color/white"
         android:textSize="10sp"
         android:visibility="gone" />

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CommentsActivity">
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
@@ -49,9 +49,9 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="5dp"
-            android:textStyle="bold"
             android:text="POST"
-            android:textColor="@color/blue" />
+            android:textColor="@color/babyblue"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

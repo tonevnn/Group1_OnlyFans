@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#2962FF"
+        android:backgroundTint="@color/babyblue"
         android:text="@string/register"
         android:textColor="#FFFFFF"
         app:iconPadding="8dp"
@@ -89,6 +89,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/default_instagram_profile_icon" />
+        app:srcCompat="@drawable/ic_onlyfans_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

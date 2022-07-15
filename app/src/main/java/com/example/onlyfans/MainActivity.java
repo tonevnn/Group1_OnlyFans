@@ -21,20 +21,33 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Fragment selectedFragment = null;
 
-    private void BindingView() {
+    private void bindingView() {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
     }
 
-    private void BindingAction() {
+    private void bindingAction() {
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
+
+
+        Bundle intent = getIntent().getExtras();
+        if (intent != null) {
+            String publisher = intent.getString("publisherid");
+            SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
+            editor.putString("profileid", publisher);
+            editor.apply();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
+
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.nav_home:
                     selectedFragment = new HomeFragment();
                     break;
@@ -42,21 +55,21 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = new SearchFragment();
                     break;
                 case R.id.nav_add:
-                    startActivity(new Intent(MainActivity.this,AddActivity.class));
+                    startActivity(new Intent(MainActivity.this, AddActivity.class));
                     break;
                 case R.id.nav_notification:
                     selectedFragment = new NotificationFragment();
                     break;
                 case R.id.nav_profile:
-                    SharedPreferences.Editor editor = getSharedPreferences("PREPS", MODE_PRIVATE).edit();
+                    SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
                     editor.putString("profileid", FirebaseAuth.getInstance().getCurrentUser().getUid());
                     editor.apply();
                     selectedFragment = new ProfileFragment();
 //                    selectedFragment = new ProfileFragment();
                     break;
             }
-            if (selectedFragment != null){
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
             }
             return true;
         }
@@ -66,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BindingView();
-        BindingAction();
+        bindingView();
+        bindingAction();
     }
 }
