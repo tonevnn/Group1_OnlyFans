@@ -1,5 +1,6 @@
 package com.example.onlyfans.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.onlyfans.Adapters.PostAdapter;
 import com.example.onlyfans.Models.Post;
@@ -31,6 +33,7 @@ public class HomeFragment extends Fragment {
     private List<Post> postList;
 
     private List<String> followingList;
+    private ImageView chatapp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +49,15 @@ public class HomeFragment extends Fragment {
         postAdapter = new PostAdapter(getContext(), postList);
         recyclerView.setAdapter(postAdapter);
         checkFollowing();
+        chatapp = view.findViewById(R.id.chatapp);
+        chatapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage("com.PRM.AppChat");
+                if (intent != null)
+                    getActivity().startActivity(intent);
+            }
+        });
         return view;
     }
 

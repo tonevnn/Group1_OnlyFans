@@ -26,14 +26,15 @@
                     android:layout_height="35dp"
                     android:layout_alignParentStart="true"
                     android:layout_marginLeft="-20dp"
-                    android:src="@drawable/ic_onlyfans_logo" />
+                    android:src="@drawable/logo4" />
 
                 <ImageView
+                    android:id="@+id/chatapp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/ic_inbox"/>
+                    android:src="@drawable/ic_inbox" />
             </RelativeLayout>
 
         </Toolbar>
